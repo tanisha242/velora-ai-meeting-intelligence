@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+:root {
+  --bg-main: #F7F4F6;
+  --surface-main: #FFFCFD;
+  --surface-secondary: #F3EEF1;
+  --surface-tertiary: #E8E0E5;
+  --text-primary: #211A20;
+  --text-secondary: #756B73;
+  --text-muted: #9A9097;
+  --border-color: #E5DDE2;
+  --border-subtle: #EFE8EC;
+  --accent-primary: #713F5A;
+  --accent-hover: #4B263B;
+  --accent-light: #F3E7EE;
+  --accent-border: #D8C3CF;
+  --accent-secondary: #9B5C83;
+  --ai-accent: #9B5C83;
+  --ai-accent-hover: #713F5A;
+  --ai-accent-bg: #F3E7EE;
+  --ai-accent-border: #D8C3CF;
+  --success: #4F7661;
+  --success-bg: #EDF4F0;
+  --warning: #9A7440;
+  --warning-bg: #F8F3EC;
+  --danger: #A85454;
+  --danger-bg: #F9EAEA;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Manrope', system-ui, sans-serif;
+}
+
+.dark {
+  --bg-main: #1A1418;
+  --surface-main: #231B21;
+  --surface-secondary: #2C2229;
+  --surface-tertiary: #352932;
+  --text-primary: #F7F4F6;
+  --text-secondary: #C4B9C1;
+  --text-muted: #9A9097;
+  --border-color: #3E303B;
+  --border-subtle: #30252E;
+  --accent-primary: #9B5C83;
+  --accent-hover: #B5749D;
+  --accent-light: #2F1C28;
+  --accent-border: #5C3249;
+  --accent-secondary: #713F5A;
+  --ai-accent: #B5749D;
+  --ai-accent-hover: #C88CB1;
+  --ai-accent-bg: #2F1C28;
+  --ai-accent-border: #5C3249;
+  --success: #6E9C82;
+  --success-bg: #1C2A22;
+  --warning: #BCA374;
+  --warning-bg: #2A241C;
+  --danger: #C57676;
+  --danger-bg: #2E1E1E;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: var(--font-manrope), var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-serif-display {
+  font-family: var(--font-cormorant), var(--font-serif);
+}
+
+.font-sans-ui {
+  font-family: var(--font-manrope), var(--font-sans);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
