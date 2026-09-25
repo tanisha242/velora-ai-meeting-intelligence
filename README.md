@@ -194,7 +194,7 @@ For detailed payloads and response envelopes, see [/docs/api.md](file:///d:/Scal
 
 ---
 
-##  Final Acceptance Checklist
+## Final Acceptance Checklist
 
 - [x] **Meetings Library**: Grid display, search input, date sorting, participant filter dropdown, skeleton loading states, empty state CTA.
 - [x] **Interactive Transcript**: Speaker labels, timestamps, active segment highlight, auto-scroll, click-to-seek audio playback.
