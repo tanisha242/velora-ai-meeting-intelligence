@@ -1,25 +1,25 @@
-# MeetNote — Fireflies.ai-Inspired Meeting Intelligence & Transcription Platform
+# Velora — Fireflies.ai-Inspired Meeting Intelligence & Transcription Platform
 
 **MeetNote** is a production-quality, full-stack meeting intelligence platform built to capture, transcribe, summarize, and manage meeting notes. Inspired by the product experience and information architecture of Fireflies.ai, MeetNote features real-time audio-transcript synchronization, an interactive two-panel workspace, AI executive summaries, topic chapter markers, trackable action items, and multi-format transcript ingestion (TXT, VTT, JSON).
 
 ---
 
-## 🌟 Key Features
+##  Key Features
 
-* 📚 **Meetings Library Dashboard**: Browse, filter (by date, participant), search, and sort past meetings with clean SaaS visual hierarchy.
-* 🎧 **Real-Time Audio & Transcript Synchronization**: Integrated HTML5 audio player tracking `currentTime`. Active transcript segments highlight automatically and smooth-scroll into view. Clicking any dialogue segment immediately seeks audio playback to its start timestamp.
-* 🔍 **In-Transcript Keyword Search**: Fast case-insensitive keyword search highlighting matching dialogue lines with match counter and Next/Prev match navigation.
-* 🤖 **AI Summary & Executive Notes**: High-level meeting overviews, key takeaways, and decisions. Backend service layer is structured with a pluggable interface ready for OpenAI/Anthropic LLM SDK bindings.
-* 🔖 **Topic Chapters**: Timestamped topic chapter markers allowing instant audio seeking.
-* 📝 **Action Items Management**: Full CRUD interface for task items complete with status checkboxes (`pending`, `in_progress`, `completed`), assignees, due dates, optimistic UI updates, and backend database persistence.
-* 📂 **Multi-Format Transcript Ingestion**: Paste or upload transcripts in **.txt**, **.vtt** (WebVTT), or **.json** formats, automatically parsed into normalized timestamped database segments.
-* 🔎 **Global Workspace Search**: Search across meeting titles, participant names, summary overviews, and transcript dialogue lines.
-* 💬 **Ask AI (Bonus Feature)**: Interactive chat widget allowing users to ask questions about meeting transcripts.
-* 🌱 **Automatic Database Seeder**: Pre-populates SQLite with **6 realistic sample meetings** complete with non-lorem-ipsum transcripts, realistic participants, timestamps, summaries, and action items.
+*  **Meetings Library Dashboard**: Browse, filter (by date, participant), search, and sort past meetings with clean SaaS visual hierarchy.
+*  **Real-Time Audio & Transcript Synchronization**: Integrated HTML5 audio player tracking `currentTime`. Active transcript segments highlight automatically and smooth-scroll into view. Clicking any dialogue segment immediately seeks audio playback to its start timestamp.
+*  **In-Transcript Keyword Search**: Fast case-insensitive keyword search highlighting matching dialogue lines with match counter and Next/Prev match navigation.
+*  **AI Summary & Executive Notes**: High-level meeting overviews, key takeaways, and decisions. Backend service layer is structured with a pluggable interface ready for OpenAI/Anthropic LLM SDK bindings.
+*  **Topic Chapters**: Timestamped topic chapter markers allowing instant audio seeking.
+*  **Action Items Management**: Full CRUD interface for task items complete with status checkboxes (`pending`, `in_progress`, `completed`), assignees, due dates, optimistic UI updates, and backend database persistence.
+*  **Multi-Format Transcript Ingestion**: Paste or upload transcripts in **.txt**, **.vtt** (WebVTT), or **.json** formats, automatically parsed into normalized timestamped database segments.
+*  **Global Workspace Search**: Search across meeting titles, participant names, summary overviews, and transcript dialogue lines.
+*  **Ask AI (Bonus Feature)**: Interactive chat widget allowing users to ask questions about meeting transcripts.
+*  **Automatic Database Seeder**: Pre-populates SQLite with **6 realistic sample meetings** complete with non-lorem-ipsum transcripts, realistic participants, timestamps, summaries, and action items.
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 | Layer | Technology | Rationale |
 | :--- | :--- | :--- |
@@ -31,7 +31,7 @@
 
 ---
 
-## 🏗️ Architecture Overview
+##  Architecture Overview
 
 The system follows a clean 3-tier architecture with explicit separation of concerns:
 
@@ -51,13 +51,13 @@ SQLAlchemy 2.0 ORM (app/models)
 SQLite Database (meetnote.db)
 ```
 
-> ⚠️ **Design Principle**: FastAPI route handlers contain **zero business logic**. All parsing, search indexing, and summaries are handled within dedicated service classes (`MeetingService`, `TranscriptService`, `SummaryService`, `ActionItemService`, `SearchService`).
+>  **Design Principle**: FastAPI route handlers contain **zero business logic**. All parsing, search indexing, and summaries are handled within dedicated service classes (`MeetingService`, `TranscriptService`, `SummaryService`, `ActionItemService`, `SearchService`).
 
 For full architecture details, refer to [/docs/architecture.md](file:///d:/Scaler%20assignment/docs/architecture.md).
 
 ---
 
-## 🗄️ Database Schema & Normalization
+##  Database Schema & Normalization
 
 The database schema is fully normalized to **Third Normal Form (3NF)**:
 
@@ -90,7 +90,7 @@ For complete database schema explanations, refer to [/docs/database-schema.md](f
 
 ---
 
-## 🚀 Getting Started & Setup Guide
+##  Getting Started & Setup Guide
 
 ### 1. Prerequisites
 * Python 3.10+
@@ -136,7 +136,7 @@ Open `http://localhost:3000` in your browser.
 
 ---
 
-## 🧪 Running Tests
+##  Running Tests
 
 ### Backend Unit & Integration Tests (Pytest)
 ```bash
@@ -153,7 +153,7 @@ npm run build
 
 ---
 
-## 🔗 API Endpoint Overview
+##  API Endpoint Overview
 
 | Method | Endpoint | Description |
 | :--- | :--- | :--- |
@@ -178,7 +178,7 @@ For detailed payloads and response envelopes, see [/docs/api.md](file:///d:/Scal
 
 ---
 
-## 🎓 Design Decisions & Interview Preparation
+##  Design Decisions & Interview Preparation
 
 1. **Why Next.js App Router + TypeScript?**
    * Eliminates prop-drilling errors through centralized TypeScript definitions (`types/index.ts`). Page routing (`/meetings`, `/meetings/[id]`, `/tasks`, `/settings`) provides intuitive URL structures matching modern SaaS applications.
@@ -194,7 +194,7 @@ For detailed payloads and response envelopes, see [/docs/api.md](file:///d:/Scal
 
 ---
 
-## ✅ Final Acceptance Checklist
+##  Final Acceptance Checklist
 
 - [x] **Meetings Library**: Grid display, search input, date sorting, participant filter dropdown, skeleton loading states, empty state CTA.
 - [x] **Interactive Transcript**: Speaker labels, timestamps, active segment highlight, auto-scroll, click-to-seek audio playback.
