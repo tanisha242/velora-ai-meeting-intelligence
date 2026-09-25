@@ -194,6 +194,12 @@ For detailed payloads and response envelopes, see [/docs/api.md](file:///d:/Scal
 
 ---
 
+## Deployment
+
+- Frontend: https://velora-frontend-7bng.onrender.com
+- Backend API: https://velora-ai-meeting-intelligence.onrender.com
+- API Documentation: https://velora-ai-meeting-intelligence.onrender.com/docs
+
 ## Final Acceptance Checklist
 
 - [x] **Meetings Library**: Grid display, search input, date sorting, participant filter dropdown, skeleton loading states, empty state CTA.
