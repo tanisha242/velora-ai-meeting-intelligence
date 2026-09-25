@@ -267,7 +267,7 @@ SEED_MEETINGS = [
     }
 ]
 
-def seed_database(db: Session = None):
+def seed_database(db: Session = None, overwrite: bool = False):
     close_session = False
     if db is None:
         db = SessionLocal()
@@ -276,6 +276,11 @@ def seed_database(db: Session = None):
     try:
         # Re-create tables
         Base.metadata.create_all(bind=engine)
+
+        existing_count = db.query(Meeting).count()
+        if existing_count > 0 and not overwrite:
+            print(f"--> Database already contains {existing_count} meetings. Skipping seed.")
+            return
 
         # Clear existing data
         db.query(ActionItem).delete()
@@ -385,4 +390,4 @@ def seed_database(db: Session = None):
             db.close()
 
 if __name__ == "__main__":
-    seed_database()
+    seed_database(overwrite=True)

@@ -5,6 +5,7 @@ import logging
 
 from app.config import settings
 from app.db.database import Base, engine
+from app.db.seed import seed_database
 
 # Explicitly import all models so SQLAlchemy metadata registers all tables
 from app.models.meeting import Meeting
@@ -21,7 +22,14 @@ from app.api.routes import api_router
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger("meetnote")
 
-Base.metadata.create_all(bind=engine)
+def init_db():
+    try:
+        Base.metadata.create_all(bind=engine)
+        seed_database()
+    except Exception as e:
+        logger.error(f"Error initializing database on startup: {e}")
+
+init_db()
 
 app = FastAPI(
     title="MeetNote REST API",
